@@ -1,4 +1,4 @@
-
+Làm theo tutorial: https://www.youtube.com/watch?v=4mOkFXyxfsU
 Modern Full Stack ECommerce Application with Stripe & Sanity
 ![eCommerce](https://user-images.githubusercontent.com/70088342/160780701-7bb38a57-76bd-49a2-a4ec-49f89c50a7c7.png)
 
