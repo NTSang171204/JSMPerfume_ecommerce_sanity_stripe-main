@@ -20,7 +20,7 @@ const Home = ({ products, bannerData }) => (
 );
 
 export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
+  const query = '*[_type == "product"] | order(_createdAt desc) [0...10]';
   const products = await client.fetch(query);
 
   const bannerQuery = '*[_type == "banner"]';

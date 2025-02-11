@@ -127,11 +127,10 @@ const Cart = () => {
               <button type="button" className="btn" onClick={handleCheckout}>
                 Pay with Stripe.
               </button>
-              <p>
-                <span>OR</span>
-              </p>
-              <button type="button" className="btn" onClick={handleCheckoutMoMo}>
-                Pay with MoMo.
+              <p style={{textAlign: "center"}}>OR </p>
+              <button type="button" className="btn-momo" onClick={handleCheckoutMoMo}>
+                Pay with   
+                <img src="/momo_icon_vertical_pink.svg" alt="MoMo Logo" />
               </button>
             </div>
           </div>
