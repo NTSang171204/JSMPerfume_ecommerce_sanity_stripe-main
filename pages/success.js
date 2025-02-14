@@ -4,17 +4,35 @@ import { BsBagCheckFill } from 'react-icons/bs';
 
 import { useStateContext } from '../context/StateContext';
 import { runFireworks } from '../lib/utils';
+import { useRouter } from 'next/router';
+
 
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
-  
+
+  const Router = useRouter();
+  const { session_id } = Router.query;
   useEffect(() => {
+    if (session_id) {
+      fetch("/api/get-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({session_id }),
+      }).then((res) => {
+        if (res.ok) {
+          console.log("Order saved successfully");
+          return res.json();
+        }
+      });
+    }
     localStorage.clear();
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
     runFireworks();
-  }, []);
+  }, [session_id]);
 
   return (
     <div className="success-wrapper">

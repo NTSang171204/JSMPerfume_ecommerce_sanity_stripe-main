@@ -39,12 +39,14 @@ export default async function handler(req, res) {
             quantity: item.quantity
           }
         }),
-        success_url: `${req.headers.origin}/success`,
+        success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/canceled`,
       }
 
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
+
+      console.log(session);
 
       res.status(200).json(session);
     } catch (err) {
