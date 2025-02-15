@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import { client } from "../../lib/client";
+import { v4 as uuidv4 } from 'uuid';
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
@@ -26,6 +27,7 @@ export default async function handler(req, res) {
       customer_email: session.customer_details.email,
       createdAt: new Date().toISOString(),
       items: line_items.map((item) => ({
+        _key: uuidv4(),
         name: item.description,
         quantity: item.quantity,
         price: item.amount_total,

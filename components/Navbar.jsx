@@ -38,17 +38,21 @@ const Navbar = () => {
       {/* Search Form */}
 
       
-      <form onSubmit={handleSearch} className="search-form">
-        
-        <input
-          type="text"
-          placeholder="Search products..."
-          className="search-input"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <IoSearchSharp />
-      </form>
+      <div className="search-container">
+        <form onSubmit={handleSearch} className="search-form">
+          <button type="submit" className="search-button">
+            <IoSearchSharp />
+          </button>
+          <input
+            type="text"
+            placeholder="Search product(s) name..."
+            className="search-input"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          
+        </form>
+      </div>
 
       <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
         <AiOutlineShopping />

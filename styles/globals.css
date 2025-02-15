@@ -30,6 +30,10 @@ width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 6px 18px;
+  align-items: center;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
   position: relative;
 }
 .marquee-text{
@@ -66,7 +70,8 @@ width: 100%;
 }
 .logo{
   color: gray;
-  font-size: 18px;
+  font-size: 1.5rem;
+  font-weight: bold;
 
 }
 .cart-icon{
@@ -789,6 +794,52 @@ margin-top: 160px;
 }
 }
 /* Search bAR */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;;
+  flex-grow: 1;
+  max-width: 500px
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 0.2rem;
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.search-page-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.search-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #827979;
+  padding-bottom: 0.5rem;
+}
 
 
 /* Pagination */

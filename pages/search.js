@@ -13,8 +13,8 @@ const SearchPage = ({ products, totalProducts }) => {
   const totalPages = Math.ceil(totalProducts / PRODUCTS_PER_PAGE);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-semibold mb-4">Search results for "{query}"</h1>
+    <div className="search-page-container">
+      <h1 className="search-heading">Search result(s) for "{query}": </h1>
 
       {products.length > 0 ? (
         <div className="products-container">
